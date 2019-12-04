@@ -1,0 +1,46 @@
+<div class="login">
+  <mat-card>
+    <mat-card-header>
+      <h1 class="header">Login</h1>
+    </mat-card-header>
+    <form class="form" (submit)="onSubmit()">
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Name" [formControl]="name" [errorStateMatcher]="matcher">
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Email" [formControl]="mail" [errorStateMatcher]="matcher">
+        <mat-error *ngIf="mail.hasError('email') && !mail.hasError('required')">
+          Please enter a valid email address
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Password" [formControl]="password" [errorStateMatcher]="matcher" type="password">
+        <mat-error *ngIf="password.hasError('pattern') && !password.hasError('required')">
+          Password should be contain min 8 characters, at least one letter and one number
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <input matInput placeholder="State" [formControl]="state" [errorStateMatcher]="matcher">
+        <mat-error *ngIf="state.hasError('pattern') && !state.hasError('required')">
+          State should start with capital letter
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <input matInput [matDatepicker]="picker" placeholder="Choose a date of birth" [formControl]="dateOfBirth">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+      <mat-radio-group [formControl]="gender" class="gender">
+        <mat-radio-button value="Male">Male</mat-radio-button>
+        <mat-radio-button value="Female">Female</mat-radio-button>
+      </mat-radio-group>
+
+      <button mat-raised-button color="accent" class="full-width button" type="submit">Submit</button>
+    </form>
+  </mat-card>
+
+</div>
+

@@ -1,0 +1,34 @@
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+}
+
+.form {
+  width: 500px;
+}
+
+.header {
+  text-align: center;
+  width: 100%;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.gender {
+  display: flex;
+  justify-content: center;
+}
+
+.gender mat-radio-button {
+  margin: 10px;
+}
+
+.button {
+  margin: 10px 0;
+}

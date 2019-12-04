@@ -1,0 +1,10 @@
+<div>
+  <h1>Name: {{user.name}}</h1>
+  <h1>Email: {{user.mail}}</h1>
+  <h1>Password: {{user.password}}</h1>
+  <h1>Date of Birth: {{user.dateOfBirth | date:'medium'}}</h1>
+  <h1>State: {{user.state}}</h1>
+  <h1>Gender: {{user.gender}}</h1>
+  <a [routerLink]="'/login'">Return back</a>
+</div>
+
